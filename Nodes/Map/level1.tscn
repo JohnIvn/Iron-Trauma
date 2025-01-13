@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctkhij8pmssfl"]
+
+[ext_resource type="Script" path="res://Scripts/Level1.cs" id="1_1k3wk"]
+[ext_resource type="PackedScene" uid="uid://dqtgqgkx26nuw" path="res://Nodes/Map/submarine.tscn" id="1_xmp6l"]
+[ext_resource type="Texture2D" uid="uid://ch2d56kb8ooi4" path="res://Assets/Images/water.png" id="2_2fxt0"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_1k3wk")
+
+[node name="Submarine" parent="." instance=ExtResource("1_xmp6l")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(395, 142)
+scale = Vector2(2.3125, 1.92188)
+texture = ExtResource("2_2fxt0")

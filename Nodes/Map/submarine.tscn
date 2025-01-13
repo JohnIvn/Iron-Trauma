@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqtgqgkx26nuw"]
+
+[ext_resource type="PackedScene" uid="uid://bnuq1ml4466rw" path="res://Nodes/Character/player.tscn" id="1_qvn28"]
+[ext_resource type="Script" path="res://Scripts/Submarine.cs" id="1_vtl2v"]
+
+[node name="Submarine" type="Node2D"]
+script = ExtResource("1_vtl2v")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_qvn28")]
+position = Vector2(161, 83)
