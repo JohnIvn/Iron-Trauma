@@ -1,0 +1,19 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iron Trauma", "Iron Trauma.csproj", "{2246B765-1C97-460C-AD60-E806E8D385EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	ExportDebug|Any CPU = ExportDebug|Any CPU
+	ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2246B765-1C97-460C-AD60-E806E8D385EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2246B765-1C97-460C-AD60-E806E8D385EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2246B765-1C97-460C-AD60-E806E8D385EC}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{2246B765-1C97-460C-AD60-E806E8D385EC}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{2246B765-1C97-460C-AD60-E806E8D385EC}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{2246B765-1C97-460C-AD60-E806E8D385EC}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+EndGlobal
