@@ -19,6 +19,13 @@ func _physics_process(_delta):
 		if _animationPlayer:
 			_animationPlayer.play("walking_left")
 			
+
+	if Input.is_action_pressed("move_down"):
+		velocity.y += Speed
+		
+	elif Input.is_action_pressed("move_up"):
+		velocity.y -= Speed
+			
 	if velocity == Vector2.ZERO and _animationPlayer:
 		_animationPlayer.stop()
 
