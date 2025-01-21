@@ -5,23 +5,45 @@ public partial class Player : CharacterBody2D
 {
 	public const float Speed = 300.0f;
 
+	private AnimationPlayer _animationPlayer;
+
+	public override void _Ready()
+	{
+		// Ensure the path matches the node's actual location in the scene
+		_animationPlayer = GetNode<AnimationPlayer>("WalkingAnimation");
+
+		if (_animationPlayer == null)
+		{
+			GD.PrintErr("AnimationPlayer node not found in player.tscn. Check the node path or structure.");
+		}
+	}
+
 	public override void _PhysicsProcess(double delta)
 	{
 		Vector2 velocity = Velocity;
 
-		// Get the input direction for movement (left, right, up, down)
-		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
+		// Get movement input
+		Vector2 direction = Input.GetVector("move_left", "move_right", "move_up", "move_down");
 
-		// Normalize the direction vector to avoid faster diagonal movement
 		if (direction != Vector2.Zero)
 		{
 			direction = direction.Normalized();
 		}
 
-		// Update velocity based on input direction
 		velocity = direction * Speed;
 
-		// Apply the velocity to the character's movement
+		if (_animationPlayer != null)
+		{
+			if (direction.X > 0) 
+			{
+				_animationPlayer.Play("walking_right");
+			}
+			else if (direction.X < 0) 
+			{
+				_animationPlayer.Play("walking_left");
+			}
+		}
+
 		Velocity = velocity;
 		MoveAndSlide();
 	}

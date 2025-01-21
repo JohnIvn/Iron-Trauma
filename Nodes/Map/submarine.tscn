@@ -1,10 +1,32 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqtgqgkx26nuw"]
+[gd_scene load_steps=4 format=3 uid="uid://dqtgqgkx26nuw"]
 
 [ext_resource type="PackedScene" uid="uid://bnuq1ml4466rw" path="res://Nodes/Character/player.tscn" id="1_qvn28"]
-[ext_resource type="Script" path="res://Scripts/Submarine.cs" id="1_vtl2v"]
+[ext_resource type="Texture2D" uid="uid://h2uj5mtn607v" path="res://Assets/Images/ex.png" id="2_oy5ub"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uodv4"]
+size = Vector2(29, 524)
 
 [node name="Submarine" type="Node2D"]
-script = ExtResource("1_vtl2v")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(538, 271)
+scale = Vector2(0.5875, 0.597222)
+texture = ExtResource("2_oy5ub")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(63.5, 280)
+shape = SubResource("RectangleShape2D_uodv4")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(79, 20, 654, 19, 655, 30, 667, 29, 669, 288, 639, 288, 638, 43, 80, 45)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(301, 288, 668, 289, 669, 464, 638, 464, 639, 330, 305, 330)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(80, 520, 636, 521, 637, 503, 671, 507, 671, 518, 686, 522, 689, 532, 961, 534, 964, 355, 952, 355, 950, 387, 890, 388, 889, 244, 949, 244, 952, 279, 962, 280, 963, 130, 669, 131, 669, 72, 1058, 73, 1062, 128, 1017, 129, 1017, 472, 995, 479, 996, 532, 1020, 534, 1019, 580, 55, 572, 55, 541, 82, 538)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_qvn28")]
 position = Vector2(161, 83)
