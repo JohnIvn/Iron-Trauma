@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccg5hagv5lwdl"]
+
+[ext_resource type="Script" path="res://Nodes/Map/level_1m.gd" id="1_b115e"]
+[ext_resource type="PackedScene" uid="uid://dqtgqgkx26nuw" path="res://Nodes/Map/submarine.tscn" id="1_isea1"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_lyexd"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[sub_resource type="GDScript" id="GDScript_pjys2"]
+script/source = "extends MultiplayerSynchronizer
+"
+
+[node name="Level 1" type="Node2D"]
+script = ExtResource("1_b115e")
+
+[node name="Submarine" parent="." instance=ExtResource("1_isea1")]
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_lyexd")
+script = SubResource("GDScript_pjys2")
