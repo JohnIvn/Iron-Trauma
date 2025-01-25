@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bnuq1ml4466rw"]
+[gd_scene load_steps=17 format=3 uid="uid://bnuq1ml4466rw"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_4hj28"]
 [ext_resource type="Texture2D" uid="uid://d3sw4npuoeomw" path="res://Assets/Images/Human/human-Sheet.png" id="2_ry5ih"]
@@ -35,6 +35,10 @@ region = Rect2(192, 0, 32, 32)
 atlas = ExtResource("2_ry5ih")
 region = Rect2(224, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_bumia"]
+atlas = ExtResource("2_ry5ih")
+region = Rect2(0, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_lmwi5"]
 animations = [{
 "frames": [{
@@ -65,10 +69,18 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bumia")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1dsi6"]
-size = Vector2(15, 14)
+size = Vector2(12, 5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2vmu8"]
 bg_color = Color(0.0588235, 0.352941, 0.6, 0.443137)
@@ -87,18 +99,11 @@ ACCEL = 10.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_lmwi5")
-frame_progress = 0.171155
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(-97, -31)
-texture = ExtResource("2_ry5ih")
-offset = Vector2(97, 31)
-region_enabled = true
-region_rect = Rect2(0, 0, 32, 32)
+animation = &"idle"
+frame_progress = 0.454716
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, 9)
+position = Vector2(0, 13.5)
 shape = SubResource("RectangleShape2D_1dsi6")
 
 [node name="Camera2D" type="Camera2D" parent="."]
