@@ -82,7 +82,9 @@ frame_progress = 0.171155
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
+position = Vector2(-97, -31)
 texture = ExtResource("2_ry5ih")
+offset = Vector2(97, 31)
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
 
