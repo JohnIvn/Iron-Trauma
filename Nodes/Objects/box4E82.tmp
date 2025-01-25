@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://0jc1n368m27u"]
+
+[ext_resource type="Script" path="res://Nodes/Objects/box.gd" id="1_h4i8u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_obuvo"]
+radius = 19.0263
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y2o5p"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_xwetx"]
+
+[node name="Box" type="StaticBody2D"]
+script = ExtResource("1_h4i8u")
+
+[node name="Detecion" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detecion"]
+shape = SubResource("CircleShape2D_obuvo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_y2o5p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0.608337, 0.659153, 1)
+scale = Vector2(20, 20)
+texture = SubResource("CanvasTexture_xwetx")
+
+[connection signal="area_entered" from="Detecion" to="." method="_on_detecion_area_entered"]
+[connection signal="body_entered" from="Detecion" to="." method="_on_detecion_body_entered"]
+[connection signal="body_exited" from="Detecion" to="." method="_on_detecion_body_exited"]

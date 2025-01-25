@@ -14,7 +14,6 @@ var baseSpeed = 0.0
 @export var recoveryRate = 35.5
 var baseStamina = 0.0
 
-
 var input: Vector2
 
 func _ready() -> void:
@@ -61,7 +60,6 @@ func _process(delta: float) -> void:
 		else:
 			baseStamina += recoveryRate * delta
 			baseStamina = clamp(baseStamina, 0, maxStamina)
-	
 			
 	velocity = lerp(velocity, playerInput * baseSpeed, delta * ACCEL)
 	
@@ -90,3 +88,7 @@ func _animation_handler():
 	else:
 		sprite_2d.visible = true
 		animated_sprite_2d.visible = false
+
+func drain():
+	baseSpeed = 0.0
+		

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dqtgqgkx26nuw"]
+[gd_scene load_steps=5 format=3 uid="uid://dqtgqgkx26nuw"]
 
 [ext_resource type="PackedScene" uid="uid://bnuq1ml4466rw" path="res://Nodes/Character/player.tscn" id="1_qvn28"]
 [ext_resource type="Texture2D" uid="uid://h2uj5mtn607v" path="res://Assets/Images/ex.png" id="2_oy5ub"]
+[ext_resource type="PackedScene" uid="uid://0jc1n368m27u" path="res://Nodes/Objects/box.tscn" id="3_ff311"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uodv4"]
 size = Vector2(29, 524)
@@ -30,3 +31,6 @@ polygon = PackedVector2Array(80, 520, 636, 521, 637, 503, 671, 507, 671, 518, 68
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_qvn28")]
 position = Vector2(161, 83)
+
+[node name="Box" parent="." instance=ExtResource("3_ff311")]
+position = Vector2(310, 181)
