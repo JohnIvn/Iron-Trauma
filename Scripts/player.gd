@@ -2,6 +2,7 @@ extends CharacterBody2D
 # Nodes
 @onready var PlayerSprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var StaminaBar: ProgressBar = $CanvasLayer/Control/ProgressBar
+@onready var PlayerFootsteps: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 # Constants
 
@@ -68,6 +69,7 @@ func _movement_handler(delta):
 		baseSpeed = walkSpeed
 
 		if staminaCooldown:
+			PlayerFootsteps.pitch_scale = 0.75
 			PlayerSprite.speed_scale = 0.5
 			baseSpeed -= baseSpeed * 0.75
 			staminaInterval -= delta 
@@ -81,21 +83,27 @@ func _movement_handler(delta):
 			baseStamina = clamp(baseStamina, 0, maxStamina)
 
 func _animation_handler():
+	# Check for movement
 	if input.x != 0 or input.y != 0:
+		if !PlayerFootsteps.is_playing():
+			PlayerFootsteps.play()
 		isMoving = true
 	else:
-		isMoving = false
-	
+		PlayerFootsteps.stop()
+		isMoving = false   
+		 
+# Flip sprite based on input
 	if Input.is_action_pressed("move_left"):
 		PlayerSprite.flip_h = true
-	if Input.is_action_pressed("move_right"):
+	elif Input.is_action_pressed("move_right"):
 		PlayerSprite.flip_h = false
-	
-	if isMoving and !isSprint:
-		PlayerSprite.play('walk')
-	if isSprint and isMoving:
-		PlayerSprite.play('run')
-	if !isMoving and !isSprint:
-		PlayerSprite.play('idle')
 
-		
+# Play animations based on state
+	if isMoving and !isSprint:
+		PlayerFootsteps.pitch_scale = 1.5
+		PlayerSprite.play("walk")
+	elif isSprint and isMoving:
+		PlayerFootsteps.pitch_scale = 2.5
+		PlayerSprite.play("run")
+	elif !isMoving and !isSprint:
+		PlayerSprite.play("idle")
