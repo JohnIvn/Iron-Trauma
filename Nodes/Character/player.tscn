@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=13 format=3 uid="uid://bnuq1ml4466rw"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_4hj28"]
@@ -34,12 +35,111 @@ region = Rect2(192, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_dnour"]
 atlas = ExtResource("2_ry5ih")
 region = Rect2(224, 0, 32, 32)
+=======
+[gd_scene load_steps=65 format=3 uid="uid://bnuq1ml4466rw"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_4hj28"]
+[ext_resource type="Texture2D" uid="uid://ddnxv4nt0tn38" path="res://Assets/Images/Human/Idle/Marine001_Idle1.png" id="2_34a0f"]
+[ext_resource type="Texture2D" uid="uid://8aq0vkxsy5u0" path="res://Assets/Images/Human/With Gun/Fire/Marine001_FireGun1.png" id="2_i814t"]
+[ext_resource type="Texture2D" uid="uid://bq31h1ag27qnk" path="res://Assets/Images/Human/Idle/Marine001_Idle2.png" id="3_7mdod"]
+[ext_resource type="Texture2D" uid="uid://cgdoljnhcugbh" path="res://Assets/Images/Human/With Gun/Fire/Marine001_FireGun2.png" id="3_q8u5q"]
+[ext_resource type="Texture2D" uid="uid://dnfdeit5mivb0" path="res://Assets/Images/Human/With Gun/Fire/Marine001_FireGun3.png" id="4_iyjvt"]
+[ext_resource type="Texture2D" uid="uid://3iubqwu30nqk" path="res://Assets/Images/Human/Run/Marine001_run1.png" id="4_vq57l"]
+[ext_resource type="Texture2D" uid="uid://dar0n2lretib" path="res://Assets/Images/Human/With Gun/Fire/Marine001_FireGun4.png" id="5_1jsnw"]
+[ext_resource type="Texture2D" uid="uid://cmp8nqysrim7u" path="res://Assets/Images/Human/Run/Marine001_run2.png" id="5_enxcj"]
+[ext_resource type="Texture2D" uid="uid://bu3w1xltddo72" path="res://Assets/Images/Human/Run/Marine001_run3.png" id="6_f8xjk"]
+[ext_resource type="Texture2D" uid="uid://bh7k5653llwab" path="res://Assets/Images/Human/With Gun/Fire/Marine001_FireGun5.png" id="6_se62g"]
+[ext_resource type="Texture2D" uid="uid://ccx4bas83t1su" path="res://Assets/Images/Human/With Gun/Fire/Marine001_FireGun6.png" id="7_3kqy5"]
+[ext_resource type="Texture2D" uid="uid://c0ckew0kdnbsj" path="res://Assets/Images/Human/Run/Marine001_run4.png" id="7_tai2t"]
+[ext_resource type="Texture2D" uid="uid://dt5t6xpmnybqw" path="res://Assets/Images/Human/Run/Marine001_run5.png" id="8_fd87q"]
+[ext_resource type="Texture2D" uid="uid://c0247lhskg082" path="res://Assets/Images/Human/With Gun/Fire/Marine001_FireGun7.png" id="8_qh2h7"]
+[ext_resource type="Texture2D" uid="uid://bcsyaxap7isyy" path="res://Assets/Images/Human/Run/Marine001_run6.png" id="9_42o5b"]
+[ext_resource type="Texture2D" uid="uid://4ccootfafb4s" path="res://Assets/Images/Human/With Gun/Fire/Marine001_FireGun8.png" id="9_pqbkv"]
+[ext_resource type="Texture2D" uid="uid://dxkfri2vx3hna" path="res://Assets/Images/Human/With Gun/Fire/Marine001_FireGun9.png" id="10_6a0k7"]
+[ext_resource type="Texture2D" uid="uid://dud6x80r0qvhp" path="res://Assets/Images/Human/Run/Marine001_run7.png" id="10_ly8tn"]
+[ext_resource type="Texture2D" uid="uid://da0nuficqphax" path="res://Assets/Images/Human/Run/Marine001_run8.png" id="11_bt1dq"]
+[ext_resource type="Texture2D" uid="uid://dioidngp18rb6" path="res://Assets/Images/Human/Run/Marine001_run9.png" id="12_8rtns"]
+[ext_resource type="Texture2D" uid="uid://b7h1ea3e3lxlg" path="res://Assets/Images/Human/With Gun/Idle/Marine001_IdleGun1.png" id="13_3ypqg"]
+[ext_resource type="Texture2D" uid="uid://c7neght344dts" path="res://Assets/Images/Human/Walk/Marine001_walk1.png" id="13_ivb8g"]
+[ext_resource type="Texture2D" uid="uid://dtk5wy7h7mr3k" path="res://Assets/Images/Human/With Gun/Idle/Marine001_IdleGun2.png" id="14_p6asb"]
+[ext_resource type="Texture2D" uid="uid://djhaj2128mxyl" path="res://Assets/Images/Human/Walk/Marine001_walk2.png" id="14_qcj8k"]
+[ext_resource type="Texture2D" uid="uid://ixxyf8rrkw5n" path="res://Assets/Images/Human/Walk/Marine001_walk3.png" id="15_kq0d3"]
+[ext_resource type="Texture2D" uid="uid://djltd5ve6gfgr" path="res://Assets/Images/Human/Walk/Marine001_walk4.png" id="16_wm7gg"]
+[ext_resource type="Texture2D" uid="uid://ce2xnlxd6ltge" path="res://Assets/Images/Human/Walk/Marine001_walk5.png" id="17_m5pit"]
+[ext_resource type="Texture2D" uid="uid://by1n3rqtmyb8q" path="res://Assets/Images/Human/Walk/Marine001_walk6.png" id="18_hrgnj"]
+[ext_resource type="Texture2D" uid="uid://dy83xssksuco0" path="res://Assets/Images/Human/Walk/Marine001_walk7.png" id="19_w5q0y"]
+[ext_resource type="Texture2D" uid="uid://bqjuur6aikhqu" path="res://Assets/Images/Human/Walk/Marine001_walk8.png" id="20_33u7v"]
+[ext_resource type="Texture2D" uid="uid://cpn0m2y5dab2i" path="res://Assets/Textures/light.png" id="21_ga460"]
+[ext_resource type="AudioStream" uid="uid://b7un7ffptbjc2" path="res://Assets/Audio/footsteps.mp3" id="22_mfvf6"]
+[ext_resource type="Texture2D" uid="uid://dil2bb18robsy" path="res://Assets/Images/Human/With Gun/Death/Marine001_IdleGun1.png" id="24_rhvjm"]
+[ext_resource type="Texture2D" uid="uid://5b6k8ubdghhf" path="res://Assets/Images/Human/With Gun/Death/Marine001_IdleGun2.png" id="25_iippa"]
+[ext_resource type="Texture2D" uid="uid://cj21llm51skfk" path="res://Assets/Images/Human/With Gun/Death/Marine001_IdleGun3.png" id="26_a4cd8"]
+[ext_resource type="Texture2D" uid="uid://bcga7d58kn5fs" path="res://Assets/Images/Human/With Gun/Death/Marine001_IdleGun4.png" id="27_1hoqm"]
+[ext_resource type="Texture2D" uid="uid://bbbre7x7vmcf8" path="res://Assets/Images/Human/With Gun/Death/Marine001_IdleGun5.png" id="28_v51gx"]
+[ext_resource type="Texture2D" uid="uid://6ejuws01wa2r" path="res://Assets/Images/Human/With Gun/Death/Marine001_IdleGun6.png" id="29_h3rw2"]
+[ext_resource type="Texture2D" uid="uid://bbk66318s1n8w" path="res://Assets/Images/Human/With Gun/Death/Marine001_IdleGun7.png" id="30_38ls0"]
+[ext_resource type="Texture2D" uid="uid://daao3vxulxehs" path="res://Assets/Images/Human/With Gun/Death/Marine001_IdleGun8.png" id="31_jaygw"]
+[ext_resource type="Texture2D" uid="uid://b1m0qgjqf4f25" path="res://Assets/Images/Human/With Gun/Death/Marine001_IdleGun9.png" id="32_8ffj4"]
+[ext_resource type="Texture2D" uid="uid://qkhoc4bbh53b" path="res://Assets/Images/Human/With Gun/Death/Marine001_IdleGun10.png" id="33_xs4ks"]
+[ext_resource type="Texture2D" uid="uid://jhp6fr2y1mio" path="res://Assets/Images/Human/With Gun/Death/Marine001_IdleGun11.png" id="34_k5hvb"]
+[ext_resource type="Texture2D" uid="uid://xjymuankxgfn" path="res://Assets/Images/Human/With Gun/Death/Marine001_IdleGun12.png" id="35_rqmxg"]
+[ext_resource type="Texture2D" uid="uid://btnwv65rhtv1f" path="res://Assets/Images/Human/With Gun/Death/Marine001_IdleGun13.png" id="36_v8dig"]
+[ext_resource type="Texture2D" uid="uid://2g8w5ei2psv1" path="res://Assets/Images/Human/With Gun/Death/Marine001_IdleGun14.png" id="37_sv35w"]
+[ext_resource type="Texture2D" uid="uid://3tsxo0b2ygwh" path="res://Assets/Images/Human/With Gun/Death/Marine001_IdleGun15.png" id="38_0y7xj"]
+[ext_resource type="Texture2D" uid="uid://5wxrnoefyevt" path="res://Assets/Images/Human/With Gun/Death/Marine001_IdleGun16.png" id="39_53duk"]
+[ext_resource type="Texture2D" uid="uid://d3xy2ljhu242a" path="res://Assets/Images/Human/With Gun/Death/Marine001_IdleGun17.png" id="40_hrwx8"]
+[ext_resource type="Texture2D" uid="uid://cdw8qub7oylnl" path="res://Assets/Images/Human/With Gun/Walk/Marine001_walk1.png" id="49_qcvdt"]
+[ext_resource type="Texture2D" uid="uid://33ynh18scns3" path="res://Assets/Images/Human/With Gun/Walk/Marine001_walk2.png" id="50_pfa1v"]
+[ext_resource type="Texture2D" uid="uid://daahal5jyj130" path="res://Assets/Images/Human/With Gun/Walk/Marine001_walk3.png" id="51_ujpfh"]
+[ext_resource type="Texture2D" uid="uid://c8n6j5x51edya" path="res://Assets/Images/Human/With Gun/Walk/Marine001_walk4.png" id="52_ri18l"]
+[ext_resource type="Texture2D" uid="uid://duubr0oxnqjl0" path="res://Assets/Images/Human/With Gun/Walk/Marine001_walk5.png" id="53_xix3q"]
+[ext_resource type="Texture2D" uid="uid://bmacw5oel4f5e" path="res://Assets/Images/Human/With Gun/Walk/Marine001_walk6.png" id="54_fy1f3"]
+[ext_resource type="Texture2D" uid="uid://g0eikv3ywpx1" path="res://Assets/Images/Human/With Gun/Walk/Marine001_walk7.png" id="55_0xdkr"]
+[ext_resource type="Texture2D" uid="uid://c7qm5eq1tjw3s" path="res://Assets/Images/Human/With Gun/Walk/Marine001_walk8.png" id="56_6fsp3"]
+[ext_resource type="AudioStream" uid="uid://bp2u4yl8mkgpf" path="res://Assets/Audio/Gunshot Sound Effect.mp3" id="59_p11rc"]
+>>>>>>> Stashed changes
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lmwi5"]
 animations = [{
 "frames": [{
 "duration": 1.0,
+<<<<<<< Updated upstream
 "texture": SubResource("AtlasTexture_85owf")
+=======
+"texture": ExtResource("2_i814t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_q8u5q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_iyjvt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1jsnw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_se62g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3kqy5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qh2h7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_pqbkv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6a0k7")
+}],
+"loop": false,
+"name": &"fire_gun",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_34a0f")
+>>>>>>> Stashed changes
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nwsbd")
@@ -63,7 +163,168 @@ animations = [{
 "texture": SubResource("AtlasTexture_dnour")
 }],
 "loop": true,
+<<<<<<< Updated upstream
 "name": &"default",
+=======
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_3ypqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_p6asb")
+}],
+"loop": true,
+"name": &"idle_gun",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_vq57l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_enxcj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_f8xjk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_tai2t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fd87q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_42o5b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ly8tn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_bt1dq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_8rtns")
+}],
+"loop": true,
+"name": &"run",
+"speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_rhvjm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_iippa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_a4cd8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_1hoqm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_v51gx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_h3rw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_38ls0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_jaygw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_8ffj4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_xs4ks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_k5hvb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_rqmxg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_v8dig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_sv35w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_0y7xj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_53duk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_hrwx8")
+}],
+"loop": false,
+"name": &"surprise",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_ivb8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_qcj8k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_kq0d3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_wm7gg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_m5pit")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_hrgnj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_w5q0y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_33u7v")
+}],
+"loop": true,
+"name": &"walk",
+>>>>>>> Stashed changes
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("49_qcvdt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_pfa1v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_ujpfh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_ri18l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_xix3q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_fy1f3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_0xdkr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_6fsp3")
+}],
+"loop": true,
+"name": &"walk_gun",
 "speed": 8.0
 }]
 
@@ -78,6 +339,7 @@ ACCEL = 10.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_lmwi5")
+<<<<<<< Updated upstream
 frame_progress = 0.171155
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -87,6 +349,11 @@ texture = ExtResource("2_ry5ih")
 offset = Vector2(97, 31)
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
+=======
+animation = &"fire_gun"
+frame = 8
+frame_progress = 1.0
+>>>>>>> Stashed changes
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.5, 9)
@@ -94,3 +361,53 @@ shape = SubResource("RectangleShape2D_1dsi6")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(5, 5)
+<<<<<<< Updated upstream
+=======
+position_smoothing_enabled = true
+position_smoothing_speed = 20.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Control"]
+texture_filter = 1
+layout_mode = 1
+offset_left = 1.0
+offset_right = 291.0
+offset_bottom = 38.0
+theme_override_font_sizes/font_size = 8
+theme_override_styles/background = SubResource("StyleBoxFlat_2vmu8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_706xh")
+show_percentage = false
+
+[node name="Player" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("CircleShape2D_1dgir")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(0.36, 0.36)
+color = Color(1, 0.9505, 0.73, 1)
+shadow_enabled = true
+texture = ExtResource("21_ga460")
+
+[node name="Footsteps" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("22_mfvf6")
+volume_db = 2.0
+pitch_scale = 1.5
+
+[node name="Gunshot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("59_p11rc")
+volume_db = 2.0
+pitch_scale = 0.75
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+>>>>>>> Stashed changes
