@@ -56,17 +56,20 @@ sources/0 = SubResource("TileSetAtlasSource_qwub6")
 
 [node name="Demo" type="Node2D"]
 
-[node name="Objects" type="TileMapLayer" parent="."]
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.374139, 0.374139, 0.374139, 1)
+
+[node name="Objects" type="TileMapLayer" parent="CanvasModulate"]
 z_index = 1
 texture_filter = 1
 tile_map_data = PackedByteArray("AAD5//n/AAACAAUAAAD9//n/AAABAAUAAAD///n/AAABAAUAAAACAPn/AAAAAAUAAAAJAPn/AAACAAUAAAD1//n/AAAAAAUAAAA=")
 tile_set = SubResource("TileSet_oikwx")
 
-[node name="Walls" type="TileMapLayer" parent="."]
+[node name="Walls" type="TileMapLayer" parent="CanvasModulate"]
 texture_filter = 1
 tile_map_data = PackedByteArray("AAD9//j/AAAEAAAAAAD1//j/AAAEAAAAAADx//j/AAAEAAAAAADt//j/AAAAAAAAAADt//z/AAAAAAEAAADt/wAAAAAAAAEAAADt/wQAAAAAAAEAAADt/wgAAAAAAAIAAADx/wgAAAACAAIAAAD1/wgAAAACAAIAAAD5/wgAAAACAAIAAAD9/wgAAAACAAIAAAABAAgAAAACAAIAAAAFAAgAAAACAAIAAAAJAAgAAAAGAAIAAAANAAgAAAAIAAIAAAANAAQAAAAIAAEAAAANAAAAAAAIAAEAAAANAPz/AAAIAAEAAAAFAPj/AAAEAAAAAAABAPj/AAAEAAAAAAD5//j/AAAEAAAAAAAJAPj/AAAEAAAAAAANAPj/AAAIAAAAAAA=")
 tile_set = SubResource("TileSet_oikwx")
 
-[node name="Player" parent="." instance=ExtResource("2_4oefu")]
+[node name="Player" parent="CanvasModulate" instance=ExtResource("2_4oefu")]
 z_index = 1
 position = Vector2(-41, 94)
