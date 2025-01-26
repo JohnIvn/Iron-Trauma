@@ -27,6 +27,11 @@ layout_mode = 2
 layout_mode = 2
 text = "PLAY"
 
+[node name="Demo" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "DEMO
+"
+
 [node name="Multiplayer" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "MULTIPLAYER"
@@ -40,6 +45,7 @@ layout_mode = 2
 text = "EXIT"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Demo" to="." method="_on_demo_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Multiplayer" to="." method="_on_multiplayer_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

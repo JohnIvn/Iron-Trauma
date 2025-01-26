@@ -26,7 +26,7 @@ func _get_input():
 	return input.normalized()
 	
 var isSprint = false
-var staminaInterval = 3.0
+var staminaInterval = 5.0
 var staminaCooldown
 	
 func _process(delta: float) -> void:
@@ -76,18 +76,19 @@ func _animation_handler():
 	
 	if Input.is_action_pressed("move_left"):
 		animated_sprite_2d.flip_h = true
-		sprite_2d.flip_h = true
+		#sprite_2d.flip_h = true
 	if Input.is_action_pressed("move_right"):
 		animated_sprite_2d.flip_h = false
-		sprite_2d.flip_h = false
+		#sprite_2d.flip_h = false
 	
 	if isMoving:
-		sprite_2d.visible = false
-		animated_sprite_2d.visible = true
-		animated_sprite_2d.play()
+		#sprite_2d.visible = false
+		#animated_sprite_2d.visible = true
+		animated_sprite_2d.play('default')
 	else:
-		sprite_2d.visible = true
-		animated_sprite_2d.visible = false
+		animated_sprite_2d.play('idle')
+		#sprite_2d.visible = true
+		#animated_sprite_2d.visible = false
 
 func drain():
 	baseSpeed = 0.0
