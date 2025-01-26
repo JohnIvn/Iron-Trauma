@@ -117,7 +117,7 @@ script = ExtResource("1_4hj28")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_lmwi5")
 animation = &"walk"
-frame_progress = 0.706865
+frame_progress = 0.167829
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 13.5)
@@ -158,4 +158,5 @@ shape = SubResource("CircleShape2D_1dgir")
 [node name="PointLight2D" type="PointLight2D" parent="."]
 scale = Vector2(0.36, 0.36)
 color = Color(1, 0.9505, 0.73, 1)
+shadow_enabled = true
 texture = ExtResource("21_ga460")

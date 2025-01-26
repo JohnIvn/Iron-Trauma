@@ -57,7 +57,7 @@ sources/0 = SubResource("TileSetAtlasSource_qwub6")
 [node name="Demo" type="Node2D"]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.374139, 0.374139, 0.374139, 1)
+color = Color(0.1741, 0.191609, 0.22482, 1)
 
 [node name="Objects" type="TileMapLayer" parent="CanvasModulate"]
 z_index = 1
