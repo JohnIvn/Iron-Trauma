@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=4 uid="uid://dee1m6fnqkypa"]
+[gd_scene load_steps=7 format=4 uid="uid://dee1m6fnqkypa"]
 
+[ext_resource type="PackedScene" uid="uid://dwrvdyyh367ok" path="res://Nodes/Objects/note.tscn" id="1_2fstb"]
 [ext_resource type="Texture2D" uid="uid://uih0tiuaf5hp" path="res://Assets/Images/TestTile/TileMap.png" id="1_dajhc"]
 [ext_resource type="Script" path="res://Scripts/demo.gd" id="1_uiss6"]
 [ext_resource type="PackedScene" uid="uid://bnuq1ml4466rw" path="res://Nodes/Character/player.tscn" id="3_olso7"]
@@ -56,6 +57,10 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_qwub6")
 
 [node name="Demo" type="Node2D"]
+
+[node name="Note" parent="." instance=ExtResource("1_2fstb")]
+position = Vector2(-91, -3)
+scale = Vector2(0.16, 0.16)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.1741, 0.191609, 0.22482, 1)

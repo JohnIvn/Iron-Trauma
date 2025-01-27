@@ -35,7 +35,8 @@ var mouse_mode = false
 var isPause = false
 	
 func _ready() -> void:
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	if !isPause:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	Engine.time_scale = 1.0
 	shootCD = shootDur
 	baseStamina = maxStamina
@@ -44,7 +45,7 @@ func _process(delta: float) -> void:
 	#print(PlayerSprite.animation) # For Debugging Animation
 # Mouse Mode
 	if Input.is_action_just_pressed("ui_cancel"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		mouse_mode = true
 		if !isPause:
 			_pause_game(true)
@@ -57,11 +58,9 @@ func _process(delta: float) -> void:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		mouse_mode = false
 	
-	if Input.is_action_just_pressed('surprise') and isEquiped:
+	if Input.is_action_just_pressed('surprise'):
 		if !isShooting:
-			if !StaminaOut.playing:
-				StaminaOut.play()
-				isDead = true
+			isDead = true
 		
 	if !isDead:
 # Animation Handler
@@ -183,6 +182,8 @@ var isDead
 
 func _death(delta):
 	if isDead:
+		if !StaminaOut.playing:
+			StaminaOut.play()
 		#Engine.time_scale = 0.75
 		PlayerFootsteps.stop()
 		PlayerSprite.play('surprise')
