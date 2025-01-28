@@ -10,8 +10,7 @@ func _on_exit_pressed():
 	get_tree().quit()
 
 func _on_multiplayer_pressed() -> void:
-	get_tree().change_scene_to_file("res://Nodes/Main Menu/multiplayer_ui.tscn")
-
+	get_tree().change_scene_to_file("res://Nodes/Interface/multiplayer_ui.tscn")
 
 func _on_demo_pressed() -> void:
 	get_tree().change_scene_to_file("res://Nodes/Map/demo.tscn")

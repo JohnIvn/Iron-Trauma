@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://dee1m6fnqkypa"]
+[gd_scene load_steps=8 format=4 uid="uid://dee1m6fnqkypa"]
 
 [ext_resource type="PackedScene" uid="uid://dwrvdyyh367ok" path="res://Nodes/Objects/note.tscn" id="1_2fstb"]
 [ext_resource type="Texture2D" uid="uid://uih0tiuaf5hp" path="res://Assets/Images/Tiles/TileMap.png" id="1_dajhc"]
 [ext_resource type="Script" path="res://Scripts/Map/demo.gd" id="1_uiss6"]
-[ext_resource type="PackedScene" uid="uid://bnuq1ml4466rw" path="res://Nodes/Character/player.tscn" id="3_olso7"]
+[ext_resource type="PackedScene" uid="uid://bnuq1ml4466rw" path="res://Nodes/Character/Player/player.tscn" id="3_olso7"]
+[ext_resource type="PackedScene" uid="uid://knf1qwyyje7u" path="res://Nodes/Interface/pause_menu.tscn" id="5_gvkf3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qwub6"]
 texture = ExtResource("1_dajhc")
@@ -58,6 +59,11 @@ sources/0 = SubResource("TileSetAtlasSource_qwub6")
 
 [node name="Demo" type="Node2D"]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource("5_gvkf3")]
+
 [node name="Note" parent="." instance=ExtResource("1_2fstb")]
 position = Vector2(-91, -3)
 scale = Vector2(0.16, 0.16)
@@ -76,8 +82,8 @@ texture_filter = 1
 tile_map_data = PackedByteArray("AAD9//j/AAAEAAAAAAD1//j/AAAEAAAAAADx//j/AAAEAAAAAADt//j/AAAAAAAAAADt//z/AAAAAAEAAADt/wAAAAAAAAEAAADt/wQAAAAAAAEAAADt/wgAAAAAAAIAAADx/wgAAAACAAIAAAD1/wgAAAACAAIAAAD5/wgAAAACAAIAAAD9/wgAAAACAAIAAAABAAgAAAACAAIAAAAFAAgAAAACAAIAAAAJAAgAAAAGAAIAAAANAAgAAAAIAAIAAAANAAQAAAAIAAEAAAANAAAAAAAIAAEAAAANAPz/AAAIAAEAAAAFAPj/AAAEAAAAAAABAPj/AAAEAAAAAAD5//j/AAAEAAAAAAAJAPj/AAAEAAAAAAANAPj/AAAIAAAAAAA=")
 tile_set = SubResource("TileSet_oikwx")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Spawner" type="Node2D" parent="."]
 z_index = 2
 script = ExtResource("1_uiss6")
 
-[node name="Player" parent="Node2D" instance=ExtResource("3_olso7")]
+[node name="Player" parent="Spawner" instance=ExtResource("3_olso7")]

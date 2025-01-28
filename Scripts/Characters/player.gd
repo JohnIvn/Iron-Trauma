@@ -1,12 +1,16 @@
 extends CharacterBody2D
 
 # Nodes
-@onready var PlayerSprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var PlayerFootsteps: AudioStreamPlayer2D = $Footsteps
-@onready var GunShot: AudioStreamPlayer2D = $Gunshot
-@onready var StaminaOut: AudioStreamPlayer2D = $"Stamina Out"
-@onready var Splatter: AudioStreamPlayer2D = $"Splatter"
-@onready var light: PointLight2D = $PointLight2D
+@onready var PlayerSprite: AnimatedSprite2D = $PlayerSprite
+@onready var light: PointLight2D = $PlayerVisuals/PointLight
+
+@onready var PlayerFootsteps: AudioStreamPlayer2D = $AudioStreamer/Footsteps
+@onready var GunShot: AudioStreamPlayer2D = $AudioStreamer/Gunshot
+@onready var StaminaOut: AudioStreamPlayer2D = $"AudioStreamer/Stamina Out"
+@onready var Splatter: AudioStreamPlayer2D = $AudioStreamer/Splatter
+
+
+
 # Variables
 @export var acceleration = 10.0
 @export var sprintSpeed = 150.0
@@ -33,34 +37,17 @@ var mouse_mode = false
 var isPause = false
 	
 func _ready() -> void:
-	if !isPause:
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	Engine.time_scale = 1.0
 	shootCD = shootDur
 	baseStamina = maxStamina
 
 func _process(delta: float) -> void:
-	#print(PlayerSprite.animation) # For Debugging Animation
 # Mouse Mode
-	if Input.is_action_just_pressed("ui_cancel"):
-		#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		mouse_mode = true
-		if !isPause:
-			_pause_game(true)
-		else:
-			_pause_game(false)
-	if isPause:
-		return
-	
-	if Input.is_action_just_pressed("ui_cancel") && mouse_mode:
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-		mouse_mode = false
-	
 	if Input.is_action_just_pressed('surprise'):
 		if !isShooting:
 			PlayerSprite.speed_scale = 1.0
 			isDead = true
-		
+
 	if !isDead:
 # Animation Handler
 		_animation_handler()
@@ -228,7 +215,8 @@ func _respawn_player():
 	# Enable player controls again
 	set_process_input(true)
 	set_process(true)
-	
+
+# Is fixed and finalized
 @onready var deadBodies: Array = []
 var deadBody: Sprite2D
 func _create_dead_body():
@@ -241,26 +229,8 @@ func _create_dead_body():
 	newDeadBody.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	newDeadBody.z_index = -1
 
-# Adds body based on world node, stores into an array
 	get_parent().add_child(newDeadBody)
 	deadBodies.append(newDeadBody)
-
-func _pause_game(pause: bool) -> void:
-	isPause = pause
-	if pause:
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		GunShot.stream_paused = true
-		Splatter.stream_paused = true
-		StaminaOut.stream_paused = true
-		PlayerFootsteps.stream_paused = true
-		Engine.time_scale = 0.0
-	else:
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-		GunShot.stream_paused = false
-		Splatter.stream_paused = false
-		StaminaOut.stream_paused = false
-		PlayerFootsteps.stream_paused = false
-		Engine.time_scale = 1.0
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if PlayerSprite.animation == "fire_gun" and PlayerSprite.frame == 8:

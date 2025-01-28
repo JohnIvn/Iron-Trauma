@@ -1,6 +1,6 @@
 extends Node2D
 
-const PLAYER = preload("res://Nodes/Character/player.tscn")
+const PLAYER = preload("res://Nodes/Character/Player/player.tscn")
 
 @export var spawn_position: Vector2 = Vector2(0, 0)
 @onready var player: CharacterBody2D = $Player
