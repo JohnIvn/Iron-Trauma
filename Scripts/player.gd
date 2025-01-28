@@ -2,13 +2,11 @@ extends CharacterBody2D
 
 # Nodes
 @onready var PlayerSprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var StaminaBar: ProgressBar = $CanvasLayer/Control/ProgressBar
 @onready var PlayerFootsteps: AudioStreamPlayer2D = $Footsteps
 @onready var GunShot: AudioStreamPlayer2D = $Gunshot
 @onready var StaminaOut: AudioStreamPlayer2D = $"Stamina Out"
 @onready var Splatter: AudioStreamPlayer2D = $"Splatter"
 @onready var light: PointLight2D = $PointLight2D
-
 # Variables
 @export var acceleration = 10.0
 @export var sprintSpeed = 150.0
@@ -19,7 +17,7 @@ var baseSpeed = 0.0
 @export var maxStamina = 100.0
 @export var depletionRate = 100.0
 @export var recoveryRate = 35.5
-var baseStamina = 0.0
+var baseStamina = 0.0	
 
 # Mechanics Variables
 var isMoving = false
@@ -60,6 +58,7 @@ func _process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed('surprise'):
 		if !isShooting:
+			PlayerSprite.speed_scale = 1.0
 			isDead = true
 		
 	if !isDead:
@@ -79,8 +78,6 @@ func _get_input():
 	return input.normalized()
 	
 func _movement_handler(delta):
-	StaminaBar.value = baseStamina
-	
 	if !isShooting and !isDead:
 		var playerInput = _get_input()
 		velocity = lerp(velocity, playerInput * baseSpeed, delta * acceleration)
@@ -133,9 +130,10 @@ func _handle_guns():
 		
 	if isEquiped:
 		if Input.is_action_just_pressed('attack') and !isShooting:
+			print('shooting')
 			isShooting = true
-			PlayerSprite.stop()
-			PlayerSprite.play("fire_gun")
+			if !PlayerSprite.animation == "fire_gun":
+				PlayerSprite.play("fire_gun")
 			GunShot.pitch_scale = 2.5
 			GunShot.play()
 
@@ -171,7 +169,7 @@ func _animation_handler():
 	elif isSprint and isMoving and !isEquiped:
 		PlayerFootsteps.pitch_scale = 2.5
 		PlayerSprite.play("run")
-	elif !isMoving and !isSprint:
+	elif !isMoving and !isSprint and !isShooting:
 		if !isEquiped:
 			PlayerSprite.play("idle")
 		else:
@@ -184,7 +182,6 @@ func _death(delta):
 	if isDead:
 		if !StaminaOut.playing:
 			StaminaOut.play()
-		#Engine.time_scale = 0.75
 		PlayerFootsteps.stop()
 		PlayerSprite.play('surprise')
 		if PlayerSprite.frame == 1:
@@ -202,6 +199,7 @@ func _death(delta):
 		if PlayerSprite.frame == 16:
 			Splatter.stop()
 			PlayerSprite.frame = 16
+			staminaCooldown = false
 			_start_respawn() 
 			_create_dead_body()
 
@@ -267,5 +265,6 @@ func _pause_game(pause: bool) -> void:
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if PlayerSprite.animation == "fire_gun" and PlayerSprite.frame == 8:
+		print("Shooting Finished")
 		isShooting = false
 		GunShot.pitch_scale = 0.75

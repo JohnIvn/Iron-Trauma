@@ -1,7 +1,7 @@
 extends Control
 
 @onready var pause: Control = $"."
-@onready var player: CharacterBody2D = $"../../.."
+@onready var player: CharacterBody2D = $"../.."
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed('ui_cancel'):

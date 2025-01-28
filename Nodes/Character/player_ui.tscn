@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=3 uid="uid://bgx8l06y6uvdq"]
+
+[ext_resource type="Script" path="res://Scripts/player_ui.gd" id="1_5hv6t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pgeid"]
+bg_color = Color(1, 1, 1, 0.588235)
+corner_radius_bottom_right = 5
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wciic"]
+bg_color = Color(0.0588235, 0.352941, 0.6, 0.443137)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6nt7g"]
+bg_color = Color(0.0156863, 0.6, 0.6, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4l3pj"]
+bg_color = Color(0.6, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l8184"]
+bg_color = Color(0.6, 0, 0, 1)
+
+[node name="PlayerUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+script = ExtResource("1_5hv6t")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="Control"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(7.95875, 1.84987)
+theme_override_styles/panel = SubResource("StyleBoxFlat_pgeid")
+
+[node name="Stamina" type="ProgressBar" parent="Control/Panel"]
+texture_filter = 1
+layout_mode = 1
+offset_right = 290.0
+offset_bottom = 38.0
+scale = Vector2(0.0876213, 0.231821)
+theme_override_font_sizes/font_size = 8
+theme_override_styles/background = SubResource("StyleBoxFlat_wciic")
+theme_override_styles/fill = SubResource("StyleBoxFlat_6nt7g")
+show_percentage = false
+
+[node name="Health" type="ProgressBar" parent="Control/Panel"]
+texture_filter = 1
+layout_mode = 1
+offset_top = 9.75795
+offset_right = 4.0
+offset_bottom = 36.758
+scale = Vector2(6.34876, 0.280853)
+theme_override_font_sizes/font_size = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_4l3pj")
+theme_override_styles/fill = SubResource("StyleBoxFlat_l8184")
+show_percentage = false

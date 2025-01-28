@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://bnuq1ml4466rw"]
+[gd_scene load_steps=67 format=3 uid="uid://bnuq1ml4466rw"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_4hj28"]
 [ext_resource type="Texture2D" uid="uid://ddnxv4nt0tn38" path="res://Assets/Images/Human/Idle/Marine001_Idle1.png" id="2_34a0f"]
@@ -60,6 +60,7 @@
 [ext_resource type="Texture2D" uid="uid://cn2cxnbrwsuef" path="res://Assets/Images/Human/Marine Gun/Walk/Marine001_walk6.png" id="54_lqqlg"]
 [ext_resource type="Texture2D" uid="uid://8ym6wx5c7bt5" path="res://Assets/Images/Human/Marine Gun/Walk/Marine001_walk7.png" id="55_hpykh"]
 [ext_resource type="Texture2D" uid="uid://cjbnprvu7ioom" path="res://Assets/Images/Human/Marine Gun/Walk/Marine001_walk8.png" id="56_y70iw"]
+[ext_resource type="PackedScene" uid="uid://bgx8l06y6uvdq" path="res://Nodes/Character/player_ui.tscn" id="57_womq5"]
 [ext_resource type="AudioStream" uid="uid://b6o17qf43e2ad" path="res://Assets/Audio/Stamina Out.mp3" id="60_hiw5a"]
 [ext_resource type="AudioStream" uid="uid://b18onittjtxpc" path="res://Assets/Audio/Blood Splatter Sound Effect.mp3" id="61_xquw4"]
 
@@ -269,16 +270,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1dsi6"]
 size = Vector2(12, 5)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2vmu8"]
-bg_color = Color(0.0588235, 0.352941, 0.6, 0.443137)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_706xh"]
-bg_color = Color(0.0156863, 0.6, 0.6, 1)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_1dgir"]
 radius = 24.1868
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
 script = ExtResource("1_4hj28")
 
@@ -298,29 +293,10 @@ position_smoothing_speed = 20.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Control" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -2.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="PlayerUi" parent="CanvasLayer" instance=ExtResource("57_womq5")]
 
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Control"]
-texture_filter = 1
-layout_mode = 1
-offset_left = 1.0
-offset_right = 291.0
-offset_bottom = 38.0
-theme_override_font_sizes/font_size = 8
-theme_override_styles/background = SubResource("StyleBoxFlat_2vmu8")
-theme_override_styles/fill = SubResource("StyleBoxFlat_706xh")
-show_percentage = false
-
-[node name="Pause" parent="CanvasLayer/Control" instance=ExtResource("2_bvdi1")]
+[node name="Pause" parent="CanvasLayer" instance=ExtResource("2_bvdi1")]
 visible = false
-layout_mode = 1
 
 [node name="Player" type="Area2D" parent="."]
 
