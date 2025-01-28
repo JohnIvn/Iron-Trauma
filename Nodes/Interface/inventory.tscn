@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://qv48xem46sjm"]
+
+[ext_resource type="Texture2D" uid="uid://b7iiw1jg6n4ph" path="res://Assets/Images/Interface/Handed.png" id="1_kswm6"]
+
+[node name="Slot" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_kswm6")
