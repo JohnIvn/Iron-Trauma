@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://dee1m6fnqkypa"]
+[gd_scene load_steps=9 format=4 uid="uid://dee1m6fnqkypa"]
 
 [ext_resource type="PackedScene" uid="uid://dwrvdyyh367ok" path="res://Nodes/Objects/note.tscn" id="1_2fstb"]
 [ext_resource type="Texture2D" uid="uid://uih0tiuaf5hp" path="res://Assets/Images/Tiles/TileMap.png" id="1_dajhc"]
 [ext_resource type="Script" path="res://Scripts/Map/demo.gd" id="1_uiss6"]
+[ext_resource type="PackedScene" uid="uid://qv48xem46sjm" path="res://Nodes/Interface/inventory.tscn" id="2_02nvx"]
 [ext_resource type="PackedScene" uid="uid://bnuq1ml4466rw" path="res://Nodes/Character/Player/player.tscn" id="3_olso7"]
 [ext_resource type="PackedScene" uid="uid://knf1qwyyje7u" path="res://Nodes/Interface/pause_menu.tscn" id="5_gvkf3"]
 
@@ -63,6 +64,19 @@ sources/0 = SubResource("TileSetAtlasSource_qwub6")
 layer = 2
 
 [node name="Pause" parent="CanvasLayer" instance=ExtResource("5_gvkf3")]
+visible = false
+
+[node name="Inventory" parent="CanvasLayer" instance=ExtResource("2_02nvx")]
+visible = false
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_top = 74.0
+offset_right = 0.0
+offset_bottom = 74.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(1.5, 1.5)
 
 [node name="Note" parent="." instance=ExtResource("1_2fstb")]
 position = Vector2(-91, -3)
