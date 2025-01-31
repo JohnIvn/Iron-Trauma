@@ -63,9 +63,6 @@ sources/0 = SubResource("TileSetAtlasSource_qwub6")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 2
 
-[node name="Pause" parent="CanvasLayer" instance=ExtResource("5_gvkf3")]
-visible = false
-
 [node name="Inventory" parent="CanvasLayer" instance=ExtResource("2_02nvx")]
 visible = false
 anchors_preset = 0
@@ -77,6 +74,10 @@ offset_bottom = 74.0
 grow_horizontal = 1
 grow_vertical = 1
 scale = Vector2(1.5, 1.5)
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource("5_gvkf3")]
+visible = false
+z_index = 10
 
 [node name="Note" parent="." instance=ExtResource("1_2fstb")]
 position = Vector2(-91, -3)
